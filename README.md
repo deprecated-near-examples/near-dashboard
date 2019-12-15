@@ -18,6 +18,10 @@ It depends on Sampler being installed along with the availability of `curl`, `aw
 
 Caveat: this project was only tested on a 2015 Macbook Pro.
 
+### What does the dashboard look like?
+
+![demo](https://user-images.githubusercontent.com/24913/70863197-8ce9c300-1f56-11ea-9655-dc10427eb455.gif)
+
 ### Where is the data coming from?
 
 The NEAR platform exposes multiple status endpoints for polling over HTTP for TestNet:
@@ -58,10 +62,6 @@ The same URLs are used for StakeWars with a small modification
 Another endpoint is available but not currently used by this dashboard
 - http://rpc.nearprotocol.com/network_info
 
-
-### What does the dashboard look like?
-
-> [insert demo video here]
 
 ## Local Development
 
