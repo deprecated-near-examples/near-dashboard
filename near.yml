@@ -1,0 +1,159 @@
+runcharts:
+  - title: Actions Processed by the Network
+    position: [[0, 0], [45, 20]]
+    legend:
+        enabled: true
+        details: true
+    scale: 0
+    items:
+      - label: AddKey
+        sample: curl -s $url/metrics | grep '^action_add_key_total' | awk -F ' ' '{
+            printf(" %d", $2) }'
+      - label: CreateAccount
+        sample: curl -s $url/metrics | grep '^action_create_account_total' | awk -F
+            ' ' '{ printf(" %d", $2) }'
+      - label: DeployContract
+        sample: curl -s $url/metrics | grep '^action_deploy_contract_total' | awk
+            -F ' ' '{ printf(" %d", $2) }'
+      - label: FunctionCall
+        sample: curl -s $url/metrics | grep '^action_function_call_total' | awk -F
+            ' ' '{ printf(" %d", $2) }'
+      - label: Stake
+        sample: curl -s $url/metrics | grep '^action_stake_total'  | awk -F ' ' '{
+            printf(" %d", $2) }'
+      - label: Transfer
+        sample: curl -s $url/metrics | grep '^action_transfer_total'  | awk -F ' '
+            '{ printf(" %d", $2) }'
+gauges:
+  - title: Block Processing (0.005s)
+    position: [[45, 9], [35, 1]]
+    color: 8
+    cur:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="0.005"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    max:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="+Inf"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    min:
+        sample: echo 0
+  - title: Block Processing (0.01s)
+    position: [[45, 12], [35, 2]]
+    color: 8
+    cur:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="0.01"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    max:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="+Inf"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    min:
+        sample: echo 0
+  - title: Block Processing (0.05s)
+    position: [[45, 15], [35, 2]]
+    color: 8
+    cur:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="0.05"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    max:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="+Inf"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    min:
+        sample: echo 0
+  - title: Block Processing (0.1s)
+    position: [[45, 17], [35, 2]]
+    color: 8
+    cur:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="0.1"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    max:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="+Inf"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    min:
+        sample: echo 0
+  - title: Block Processing (0.25s)
+    position: [[45, 20], [35, 2]]
+    color: 8
+    cur:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="0.25"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    max:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="+Inf"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    min:
+        sample: echo 0
+  - title: Block Processing (0.5s)
+    position: [[45, 23], [35, 2]]
+    color: 8
+    cur:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="0.5"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    max:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="+Inf"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    min:
+        sample: echo 0
+  - title: Block Processing (2.5s)
+    position: [[45, 26], [35, 2]]
+    color: 8
+    cur:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="2.5"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    max:
+        sample: curl -s $url/metrics | grep '^block_processing_time_bucket{le="+Inf"}'
+            | awk -F ' ' '{ printf(" %d", $2) }'
+    min:
+        sample: echo 0
+sparklines:
+  - title: RPC Requests
+    position: [[45, 29], [35, 6]]
+    rate-ms: 5000
+    scale: 0
+    sample: curl -s $url/metrics | grep '^http_rpc_requests_total' | awk -F ' ' '{
+        printf(" %d", $2) }'
+  - title: Status Requests
+    position: [[45, 34], [35, 6]]
+    rate-ms: 5000
+    scale: 0
+    sample: curl -s $url/metrics | grep '^http_status_requests_total' | awk -F ' '
+        '{ printf(" %d", $2) }'
+textboxes:
+  - title: Validators
+    position: [[0, 20], [45, 11]]
+    rate-ms: 10000
+    sample: curl -s $url/status | jq  --raw-output '.validators[] | "\(.account_id)
+        \(.is_slashed)"' | awk -F ' ' 'BEGIN {printf(" %-40s %-10s\n" ,"Account",
+        "Slashed?")} {printf(" %-40s %-10s\n", $1, $2)}'
+  - title: Total Count
+    position: [[33, 22], [11, 4]]
+    rate-ms: 10000
+    sample: curl -s $url/metrics | grep '^validator_active_total' | awk -F ' ' '{print
+        $2}'
+    border: true
+  - title: Amount Staked
+    position: [[33, 26], [11, 4]]
+    rate-ms: 10000
+    sample: curl -s $url/metrics | grep '^validators_amount_staked' | awk -F ' ' '{print
+        $2}'
+    border: true
+  - title: ' '
+    position: [[70, 6], [10, 4]]
+    rate-ms: 300000
+    color: 8
+    sample: curl -s $url/status | jq --raw-output '.version | "\(.build) \(.version)"'
+        | awk  -F ' ' '{ printf(" %s (v%s)", $1, $2) }'
+    border: false
+  - title: Sync Info
+    position: [[0, 31], [45, 9]]
+    rate-ms: 500
+    color: 3
+    sample: curl -s $url/status | jq --raw-output '.sync_info | "\(.syncing) \(.latest_block_hash)
+        \(.latest_block_height) \(.latest_block_time) \(.latest_state_root)"' | awk
+        -F ' ' '{ printf(" %-25s %s\n %-25s %s\n %-25s %s\n %-25s %s\n %-25s %s",
+        "latest block height", $3, "latest block hash", $2, "latest block time", $4,
+        "latest state root", $5, "syncing", $1)}'
+asciiboxes:
+  - title: ""
+    position: [[45, 1], [35, 8]]
+    rate-ms: 300000
+    color: 9
+    sample: curl -s $url/status | jq --raw-output '.chain_id'
+    border: false

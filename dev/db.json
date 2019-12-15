@@ -1,0 +1,39 @@
+{
+    "network_info": {
+        "active_peers": [],
+        "known_producers": [],
+        "num_active_peers": 0,
+        "peer_max_count": 40,
+        "received_bytes_per_sec": 0,
+        "sent_bytes_per_sec": 0
+    },
+    "status": {
+        "chain_id": "testnet",
+        "rpc_addr": "0.0.0.0:8080",
+        "sync_info": {
+            "latest_block_hash": "2Y4rnYcpwdmBBB1RxHyeVv7SKdWbA2bWtEAB6zB3TVeR",
+            "latest_block_height": 2891707,
+            "latest_block_time": "2019-12-15T08:23:09.627186712Z",
+            "latest_state_root": "6BdiK78RdYjNWJ1r3R3F9bPvhNfKgo6P1GHnzqiyA8eD",
+            "syncing": false
+        },
+        "validators": [
+            {
+                "account_id": "one",
+                "is_slashed": false
+            },
+            {
+                "account_id": "two",
+                "is_slashed": false
+            },
+            {
+                "account_id": "three",
+                "is_slashed": true
+            }
+        ],
+        "version": {
+            "build": "2af0a572",
+            "version": "0.4.4"
+        }
+    }
+}
