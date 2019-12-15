@@ -70,3 +70,11 @@ The dashboard is configured using `near.yml`.  See [Sampler documentation](https
 All requests used by the dashboard are also available in the file `dev/requests.sh`.  This file is executable and running it will generate all the data being used to drive the dashboard, although without the pretty formatting.
 
 A fake `/status` endpoint is included for sizing the dashboard to variable size data like number of validators.  To use this utility use `npm run dev` to start a local server and edit the `near.yml` file anywhere you see the `/status` endpoint being used.  Since the data is polled, any edits to `dev/db.json` will appear in the dashboard with the next request.
+
+## Related Resources
+
+There are lots of dashboard builders like this:
+
+- Go https://github.com/gizak/termui (used by Sampler)
+- Rust https://github.com/fdehau/tui-rs
+- JavaScript https://github.com/yaronn/blessed-contrib
