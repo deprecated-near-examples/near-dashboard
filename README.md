@@ -5,7 +5,7 @@ A toy project to produce a cool looking CLI dashboard for the NEAR platform.
 ## Quickstart
 
 1. clone this repo
-2. install [Sampler](https://sampler.dev/#installation) with `brew cask install sampler`
+2. install [Sampler](https://sampler.dev/#installation) with `brew install sampler`
 3. start the dashboard with `npm start`
 
 ## Wat?
