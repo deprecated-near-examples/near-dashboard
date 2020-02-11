@@ -5,8 +5,7 @@
   "scripts": {
     "prestart": "which curl && which awk && which printf",
     "start": "npm run testnet",
-    "testnet": "sampler -c near.yml --disable-telemetry -e url=https://rpc.nearprotocol.com",
-    "stakewars": "sampler -c near.yml --disable-telemetry -e url=https://rpc.tatooine.nearprotocol.com",
+    "testnet": "sampler -c near.yml -e url=https://rpc.nearprotocol.com",
     "dev": "npm run fake-near-endpoint",
     "predev": "npm install || :",
     "fake-near-endpoint": "json-server --watch dev/db.json"
