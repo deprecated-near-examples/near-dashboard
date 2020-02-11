@@ -26,13 +26,13 @@ Caveat: this project was only tested on a 2015 Macbook Pro.
 
 The NEAR platform exposes multiple status endpoints for polling over HTTP for TestNet:
 
-- http://rpc.nearprotocol.com/status
-- http://rpc.nearprotocol.com/metrics
+- https://rpc.nearprotocol.com/status
+- https://rpc.nearprotocol.com/metrics
 
 At the terminal you can use this command (wherever `curl` is available) to fetch network status
 
 ```sh
-curl -s http://rpc.nearprotocol.com/status
+curl -s https://rpc.nearprotocol.com/status
 ```
 *see [explainshell](https://explainshell.com/explain?cmd=curl+-s+http%3A%2F%2Frpc.nearprotocol.com%2Fstatus) for details on the line above*
 
@@ -40,7 +40,7 @@ curl -s http://rpc.nearprotocol.com/status
 Another utility, [jq](https://stedolan.github.io/jq/), is used to process the results that arrive as JSON
 
 ```sh
-curl -s http://rpc.nearprotocol.com/status | jq '.chain_id'
+curl -s https://rpc.nearprotocol.com/status | jq '.chain_id'
 ```
 *see [explainshell](https://explainshell.com/explain?cmd=curl+-s+http%3A%2F%2Frpc.nearprotocol.com%2Fstatus+%7C+jq+%27.chain_id%27) for details on the line above*
 
@@ -48,19 +48,15 @@ curl -s http://rpc.nearprotocol.com/status | jq '.chain_id'
 And [awk](https://linuxconfig.org/learning-linux-commands-awk) is used to extract data when multiple values are retrieved together and [printf](https://linuxconfig.org/bash-printf-syntax-basics-with-examples) us used to format the results for presentation.
 
 ```sh
-curl -s http://rpc.nearprotocol.com/metrics | grep '^block_produced_total' | awk -F ' ' '{ printf(" %d", $2) }'
+curl -s https://rpc.nearprotocol.com/metrics | grep '^block_produced_total' | awk -F ' ' '{ printf(" %d", $2) }'
 ```
 *see [explainshell](https://explainshell.com/explain?cmd=curl+-s+http%3A%2F%2Frpc.nearprotocol.com%2Fmetrics+%7C+grep+%27%5Eblock_produced_total%27+%7C+awk+-F+%27+%27+%27%7B+printf%28%22+%25d%22%2C+%242%29+%7D%27) for details on the line above*
 
 
 **Note**
 
-The same URLs are used for StakeWars with a small modification
-- http://rpc.tatooine.nearprotocol.com/status
-- http://rpc.tatooine.nearprotocol.com/metrics
-
 Another endpoint is available but not currently used by this dashboard
-- http://rpc.nearprotocol.com/network_info
+- https://rpc.nearprotocol.com/network_info
 
 
 ## Local Development
