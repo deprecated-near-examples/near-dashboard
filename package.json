@@ -1,22 +1,24 @@
 {
   "name": "near-dashboard",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A toy project to produce a cool looking CLI dashboard for the NEAR platform.",
   "scripts": {
     "prestart": "which curl && which awk && which printf",
-    "start": "npm run testnet",
-    "testnet": "sampler -c near.yml -e url=https://rpc.nearprotocol.com",
-    "dev": "npm run fake-near-endpoint",
+    "start": "npm run betanet",
+    "betanet": "sampler -c near.yml -e url=https://rpc.betanet.nearprotocol.com",
+    "testnet": "sampler -c near.yml -e url=https://rpc.testnet.nearprotocol.com",
+    "devnet": "sampler -c near.yml -e url=https://rpc.devnet.nearprotocol.com",
     "predev": "npm install || :",
-    "fake-near-endpoint": "json-server --watch dev/db.json"
+    "dev": "npm run fake:near",
+    "fake:near": "json-server --watch dev/db.json"
   },
   "keywords": [
     "near",
     "dashboard"
   ],
-  "author": "Sherif Abushadi",
+  "author": "Sherif Abushadi <sherif@nearprotocol.com>",
   "license": "MIT",
   "devDependencies": {
-    "json-server": "^0.15.1"
+    "json-server": "^0.16.1"
   }
 }
