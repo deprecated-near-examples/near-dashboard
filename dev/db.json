@@ -1,39 +1,42 @@
 {
-    "network_info": {
-        "active_peers": [],
-        "known_producers": [],
-        "num_active_peers": 0,
-        "peer_max_count": 40,
-        "received_bytes_per_sec": 0,
-        "sent_bytes_per_sec": 0
+  "network_info": {
+    "active_peers": [],
+    "known_producers": [],
+    "num_active_peers": 0,
+    "peer_max_count": 40,
+    "received_bytes_per_sec": 0,
+    "sent_bytes_per_sec": 0
+  },
+  "status": {
+    "version": {
+      "version": "0.4.13",
+      "build": "650b6986"
     },
-    "status": {
-        "chain_id": "testnet",
-        "rpc_addr": "0.0.0.0:8080",
-        "sync_info": {
-            "latest_block_hash": "2Y4rnYcpwdmBBB1RxHyeVv7SKdWbA2bWtEAB6zB3TVeR",
-            "latest_block_height": 2891707,
-            "latest_block_time": "2019-12-15T08:23:09.627186712Z",
-            "latest_state_root": "6BdiK78RdYjNWJ1r3R3F9bPvhNfKgo6P1GHnzqiyA8eD",
-            "syncing": false
-        },
-        "validators": [
-            {
-                "account_id": "one",
-                "is_slashed": false
-            },
-            {
-                "account_id": "two",
-                "is_slashed": false
-            },
-            {
-                "account_id": "three",
-                "is_slashed": true
-            }
-        ],
-        "version": {
-            "build": "2af0a572",
-            "version": "0.4.4"
-        }
+    "chain_id": "testnet",
+    "rpc_addr": "0.0.0.0:3030",
+    "validators": [{
+        "account_id": "node3",
+        "is_slashed": false
+      },
+      {
+        "account_id": "node0",
+        "is_slashed": false
+      },
+      {
+        "account_id": "node1",
+        "is_slashed": false
+      },
+      {
+        "account_id": "node2",
+        "is_slashed": false
+      }
+    ],
+    "sync_info": {
+      "latest_block_hash": "77nrKtCQnzMBHc374YSLjMW4h2c5A7T5dnALv2QGux3n",
+      "latest_block_height": 1221256,
+      "latest_state_root": "3xcG3uj1ibo4aexEKthS5mJphFjLiutaqWSVUs61DA27",
+      "latest_block_time": "2020-04-25T13:17:23.365159221Z",
+      "syncing": false
     }
+  }
 }
