@@ -7,7 +7,6 @@
     "start": "npm run betanet",
     "betanet": "sampler -c near.yml -e url=https://rpc.betanet.nearprotocol.com",
     "testnet": "sampler -c near.yml -e url=https://rpc.testnet.nearprotocol.com",
-    "devnet": "sampler -c near.yml -e url=https://rpc.devnet.nearprotocol.com",
     "predev": "npm install || :",
     "dev": "npm run fake:near",
     "fake:near": "json-server --watch dev/db.json"
