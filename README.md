@@ -1,4 +1,6 @@
-# NEAR Dashboard
+# ⚠️⛔ DEPRECATED
+
+> This project is not being actively supported, the code is not expected to work nor reflects the latests improvements in our tooling stack
 
 A toy project to produce a cool looking CLI dashboard for the NEAR platform.
 
